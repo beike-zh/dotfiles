@@ -2,7 +2,6 @@ source ~/.zplug/init.zsh
 
 
 zplug "skywind3000/z.lua"
-# zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zdharma/fast-syntax-highlighting"
 

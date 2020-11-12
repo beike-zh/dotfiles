@@ -20,9 +20,7 @@ alias vim=nvim
 alias ls='ls --color=auto'
 
 # path
-export PATH="/home/beike/.local/bin:$PATH"
-# 我想使用ghcup
-#export PATH="/home/beike/.stack/programs/x86_64-linux/ghc-tinfo6-8.8.4/bin:$PATH"
+export PATH="/home/zh/.local/bin:$PATH"
 
 
 # source .zsh
