@@ -20,6 +20,8 @@ alias vim=nvim
 alias ls='ls --color=auto'
 alias sup='sudo apt update'
 alias sug='sudo apt upgrade'
+alias oup='opam update'
+alias oug='opam upgrade'
 
 # path
 export PATH="$HOME/.local/bin:$PATH"
