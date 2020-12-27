@@ -18,9 +18,12 @@ alias mk=mkdir
 alias cl=clear
 alias vim=nvim
 alias ls='ls --color=auto'
+alias sup='sudo apt update'
+alias sug='sudo apt upgrade'
 
 # path
-export PATH="/home/zh/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.dotnet/tools:$PATH"
 
 
 # source .zsh
