@@ -26,6 +26,7 @@ alias oug='opam upgrade'
 # path
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
+export PATH="$HOME/.idris2/bin:$PATH"
 
 
 # source .zsh
