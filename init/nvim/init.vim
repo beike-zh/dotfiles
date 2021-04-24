@@ -5,8 +5,6 @@ if !has('gui_running')
   set t_Co=256
 endif
 
-" set termguicolors
-
 " 我懒得修改 runtimepath
 " 偷个懒, 在 end plug 之后添加
 " light-version
@@ -61,32 +59,30 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
 Plug 'edwinb/idris2-vim'
+Plug 'Shougo/deol.nvim'
 Plug 'skywind3000/vim-terminal-help'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'jiangmiao/auto-pairs'
-Plug 'skywind3000/vim-auto-popmenu'
-Plug 'skywind3000/vim-dict'
 
 call plug#end()
 
-" complete 
-" 设定需要生效的文件类型，如果是 "*" 的话，代表所有类型
-"let g:apc_enable_ft = {'text':1, 'markdown':1, 'php':1}
-let g:apc_enable_ft = { '*':1 }
-" 设定从字典文件以及当前打开的文件里收集补全单词，详情看 ':help cpt'
-set cpt=.,k,w,b
-" 不要自动选中第一个选项。
-set completeopt=menu,menuone,noselect"
-" 禁用在下方显示一些啰嗦的提示
+" complete
+let g:deoplete#enable_at_startup = 1
+" let g:neopairs#enable = 1
+" tab 
+inoremap <silent><expr> <TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 set shortmess+=c
-
-" vim-dict
-
+" optionally 
+call deoplete#custom#option({
+\ 'auto_complete_delay': 200,
+\ 'smart_case': v:true,
+\ 'camel_case': v:true,
+\ })
 
 " auto-pairs
 let g:AutoPairsFlyMode = 1
 let g:AutoPairsShortcutBackInsert = '<M-b>'
-
 
 
 " lightline
@@ -96,6 +92,7 @@ let g:lightline = { 'colorscheme': 'ayu_light' }
 " light-version
 colorscheme PaperColor
 set background=light
+
 
 
 " idris2

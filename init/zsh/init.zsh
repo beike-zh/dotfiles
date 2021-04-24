@@ -1,10 +1,24 @@
-
-# 初始化 z.lua
-# 似乎因为使用了 zplug, 不用再导入了
-# eval "$(lua /path/to/z.lua  --init zsh)" 
-
-
 # basic
+
+# Set up the prompt
+
+autoload -Uz promptinit
+promptinit
+prompt suse
+
+setopt histignorealldups sharehistory
+
+# Use emacs keybindings even if our EDITOR is set to vi
+bindkey -e
+
+# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
+
+# Use modern completion system
+autoload -Uz compinit
+compinit
 
 # disable beep
 unsetopt BEEP
@@ -19,6 +33,7 @@ alias mk=mkdir
 alias cls=clear
 alias vim=nvim
 alias ls='ls --color=auto'
+alias la='ls -a --color=auto'
 alias sup='sudo apt update'
 alias sug='sudo apt upgrade'
 alias oup='opam update'
@@ -37,7 +52,8 @@ export PATH="$HOME/app/Agda-nightly/bin:${PATH}"
 
 
 # source .zsh
-#zplug
-source ~/dotfiles/init/zsh/zplug.zsh
+# zplug
+# source ~/dotfiles/init/zsh/zplug.zsh
+source ~/dotfiles/init/zsh/zinit.zsh
 
 
